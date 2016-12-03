@@ -1,37 +1,29 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-
 class Hangman
 require 'date'
 require 'yaml'
 
-	def options(input)
-		case input
-		when "new" then newgame
-		when "load" then load
-		when "save" then save
-		when "exit" then @stop = true
-		end
-	end
+attr_reader :word
+attr_reader :head
+attr_reader :torso
+attr_reader :lhand
+attr_reader :rhand
+attr_reader :larm
+attr_reader :rarm
+attr_reader :lleg
+attr_reader :rleg
+attr_reader :lfoot
+attr_reader :rfoot
 
-	def menu(input)
-		input = input.downcase
-		case input
-		when "new" then newgame
-		when "load" then load
-		when "save" then save
-		when "exit" then @stop = true
-		else return false
-		end
-	end
 
 	def newgame
 		@file = []
 		@known = []
 		@points = 0
 
-		paragraphs = File.read("/Users/leo/Documents/CodingPlayground/hangman/5desk.txt").split(/\s*?\r\s*/).map do |paragraph|
+		paragraphs = File.read("dictionary.txt").split(/\s*?\r\s*/).map do |paragraph|
 			@file << paragraph
 		end
 
