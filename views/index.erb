@@ -1,0 +1,129 @@
+<html>
+  <head></head>
+  <body>
+    <style>
+      body {
+        position: absolute;
+        top: 50px;
+        left: 550px;
+      }
+      html {
+        background-color: #f7cac9;
+      }
+      #save {
+
+      }
+      #load {
+        left: 100px;
+      }
+      #reload {
+        left: 15px;
+      }
+      form {
+        position: relative;
+        top: 0px;
+        left: -40px;
+      }
+      .button {
+        position: absolute;
+        top: 400px;
+      }
+      .guy {
+        position: relative;
+        background-color: #91A8d0;
+      }
+      #head {
+        width: 30px; height: 30px;
+        opacity: <%= head %>;
+        top: 20px;
+        left: 15px;
+        border-radius: 20px;
+      }
+      #larm {
+        width: 20px; height: 10px;
+        opacity: <%= larm %>;
+        top: 22px;
+      }     
+      #rarm {
+        width: 20px; height: 10px;
+        opacity: <%= rarm %>;
+        top: 12px;
+        left: 40px;
+      }
+      #lleg {
+        width: 10px; height: 40px;
+        opacity: <%= lleg %>;
+        top: 30px;
+        left: 31px;
+      }
+      #rleg {
+        width: 10px; height: 40px;
+        opacity: <%= rleg %>;
+        top: -10px;
+        left: 20px;
+      }
+      #lhand {
+        border-radius: 5px;
+        width: 15px; height: 15px;
+        opacity: <%= lhand %>;
+        top: 0px;
+        left: -5px;
+      }
+      #rhand {
+        border-radius: 5px;
+        width: 15px; height: 15px;
+        opacity: <%= rhand %>;
+        top: -15px;
+        left: 50px;
+      }
+      #rfoot {
+        border-radius: 5px;
+        width: 15px; height: 15px;
+        opacity: <%= rfoot %>;
+        top: -10px;
+        left: 15px;
+      }
+      #lfoot {
+        border-radius: 5px;
+        width: 15px; height: 15px;
+        opacity: <%= lfoot %>;
+        top: -25px;
+        left: 30px;
+      }
+      #torso {
+        position: absolute;
+        width: 15px; height: 55px;
+        opacity: <%= torso %>;
+        top: 120px;
+        left: 23px;
+      }
+
+    </style>
+    <div id='buttons'>
+
+    <form class='button' id='reload' method="post" action="/new"> <input class='btn btn-primary' type='submit' value='new game'> </form>
+    <form class='button' id='save' method="post" action="/save"> <input class='btn btn-primary' type='submit' value='save'> </form>
+    <form class='button' id='load' method="post" action="/load"> <input class='btn btn-primary' type='submit' value='load last saved'> </form>
+
+    <form>
+      <input type='text' name='guess' maxlength='1' />
+      <input type='submit' value='Guess!' />
+    </form>
+    <p> <%= known %> </p>
+    </div>
+
+    <div id="guy">
+      <div class="guy" id="head"></div>
+      <div class="guy" id="torso"></div>
+      <div class="guy" id="larm"></div>
+      <div class="guy" id="rarm"></div>
+      <div class="guy" id="lhand"></div>
+      <div class="guy" id="rhand"></div>
+      <div class="guy" id="lleg"></div>
+      <div class="guy" id="rleg"></div>
+      <div class="guy" id="rfoot"></div>
+      <div class="guy" id="lfoot"></div>
+   </div>
+    <p> 10 strikes hangs the man... <br> <%= points_etc %> </p>
+  </body>
+</html>
