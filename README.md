@@ -1,3 +1,5 @@
+#Hangman
+
 This is a game written in Ruby and deployed with Sinatra. It uses yaml to save game data.
 
 Play hangman by guessing a letter until you get one correct. Keep guessing until you guess the entire word. If you guess more than 10 guesses wrong, the man will be hanged. However, you can keep guessing until you get find the word.
