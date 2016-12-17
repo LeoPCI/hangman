@@ -6,4 +6,4 @@ Play hangman by guessing a letter until you get one correct. Keep guessing until
 
 Save your game with the 'save game' button, and reload it at any time with the 'load last saved' button.
 
-This game is deployed on the web at the following address: 
+This game is deployed on the web at the following address: https://hangmanwithsinatra.herokuapp.com
