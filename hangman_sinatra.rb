@@ -90,7 +90,7 @@ attr_reader :rfoot
 
 	  return "YOU LOSE" if @points>9 
 	  return "YOU WIN" if @known==@word
-	  return @points
+	  return "strikes: #{@points}"
 
 	end
 
