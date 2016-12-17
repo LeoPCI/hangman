@@ -2,31 +2,64 @@
   <head></head>
   <body>
     <style>
-      body {
-        position: absolute;
-        top: 50px;
-        left: 550px;
-      }
+
       html {
         background-color: #f7cac9;
       }
-      #save {
-
-      }
-      #load {
-        left: 100px;
-      }
-      #reload {
-        left: 15px;
+/*forms and output*/
+      h1 {
+        position: relative;
+        left: 42%;
+        top: 160px;
+        font-family: cursive;
+        width: 100px;
       }
       form {
         position: relative;
-        top: 0px;
-        left: -40px;
+        top: 170px;
+        left: 30%;
+      }
+      #input {
+        width: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .input {
+        position: relative;
+        top: 330px;
+        left: 38%;     
+        width: 100px;   
       }
       .button {
-        position: absolute;
-        top: 400px;
+        position: relative;
+        top: 100px;
+        left: 38%;
+        width: 100px;
+      }
+      #known {
+        position: relative;
+        left: 54%;
+        top: 195px;
+        width: 100px;
+      }
+      #output {
+        width: 200px;
+        position: relative;
+        left: 38%;
+        top: -350px;
+      }
+/*the hangman*/
+      #guy {
+        position: relative;
+        left: 55%;
+        width: 10px;
+        height: 10px;
+      }
+      img {
+        position: relative;
+        width: 100px;
+        top: -367px;
+        left: -13px;
       }
       .guy {
         position: relative;
@@ -42,75 +75,74 @@
       #larm {
         width: 20px; height: 10px;
         opacity: <%= larm %>;
-        top: 22px;
+        top: -28px;
       }     
       #rarm {
         width: 20px; height: 10px;
         opacity: <%= rarm %>;
-        top: 12px;
+        top: -37px;
         left: 40px;
       }
       #lleg {
         width: 10px; height: 40px;
         opacity: <%= lleg %>;
-        top: 30px;
+        top: -30px;
         left: 31px;
       }
       #rleg {
         width: 10px; height: 40px;
         opacity: <%= rleg %>;
-        top: -10px;
+        top: -70px;
         left: 20px;
       }
       #lhand {
         border-radius: 5px;
         width: 15px; height: 15px;
         opacity: <%= lhand %>;
-        top: 0px;
+        top: -50px;
         left: -5px;
       }
       #rhand {
         border-radius: 5px;
         width: 15px; height: 15px;
         opacity: <%= rhand %>;
-        top: -15px;
+        top: -65px;
         left: 50px;
       }
       #rfoot {
         border-radius: 5px;
         width: 15px; height: 15px;
         opacity: <%= rfoot %>;
-        top: -10px;
+        top: -70px;
         left: 15px;
       }
       #lfoot {
         border-radius: 5px;
         width: 15px; height: 15px;
         opacity: <%= lfoot %>;
-        top: -25px;
+        top: -85px;
         left: 30px;
       }
       #torso {
-        position: absolute;
+        position: relative;
         width: 15px; height: 55px;
         opacity: <%= torso %>;
-        top: 120px;
+        top: 20px;
         left: 23px;
       }
 
     </style>
-    <div id='buttons'>
+
+    <form class='input'>
+      Your guess: <input type='text' id='input' name='guess' maxlength='1' />
+      <input type='submit' value='guess!' />
+    </form>
 
     <form class='button' id='reload' method="post" action="/new"> <input class='btn btn-primary' type='submit' value='new game'> </form>
-    <form class='button' id='save' method="post" action="/save"> <input class='btn btn-primary' type='submit' value='save'> </form>
+    <form class='button' id='save' method="post" action="/save"> <input class='btn btn-primary' type='submit' value='save game'> </form>
     <form class='button' id='load' method="post" action="/load"> <input class='btn btn-primary' type='submit' value='load last saved'> </form>
 
-    <form>
-      <input type='text' name='guess' maxlength='1' />
-      <input type='submit' value='Guess!' />
-    </form>
-    <p> <%= known %> </p>
-    </div>
+    <p id='known'> <%= known %> </p>
 
     <div id="guy">
       <div class="guy" id="head"></div>
@@ -123,7 +155,9 @@
       <div class="guy" id="rleg"></div>
       <div class="guy" id="rfoot"></div>
       <div class="guy" id="lfoot"></div>
+      <img src="noose.png">
    </div>
-    <p> 10 strikes hangs the man... <br> <%= points_etc %> </p>
+    <p id='output'> 10 strikes hangs the man... <br> <%= points_etc %> </p>
+    <h1>HANGMAN</h1>
   </body>
 </html>
